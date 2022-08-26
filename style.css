@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --light-color: #f1efdc;
+  --dark-color: #333;
+  --dark-text: #222;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--dark-color);
+  color: var(--dark-text);
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* CONTAINER */
+
+.container {
+  background-color: var(--light-color);
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.container.show-nav {
+  background-color: var(--light-color);
+  transform: rotate(-20deg);
+}
+
+/* CIRCLE */
+
+.circle-container {
+  position: fixed;
+  left: -100px;
+  top: -100px;
+}
+
+.circle {
+  background-color: #256d85;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+  top: 50%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.container.show-nav + nav ul li {
+  transform: translateX(0);
+  transition: transform 0.4s ease-in 0.3s;
+}
+
+/* NAV */
+
+nav {
+  position: fixed;
+  bottom: 300px;
+  left: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+nav ul li {
+  cursor: pointer;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+nav ul li i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* CONTENT */
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.content img {
+  display: flex;
+  justify-content: center;
+  max-width: 50%;
+  border-radius: 50%;
+  margin: 20px auto 0;
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.content small {
+  font-style: italic;
+  color: #555;
+}
+
+.content p {
+  color: #333;
+  line-height: 1.5;
+}
